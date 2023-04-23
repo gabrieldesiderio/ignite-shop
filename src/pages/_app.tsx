@@ -1,5 +1,15 @@
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+import { Roboto } from 'next/font/google'
 
-export default MyApp
+const roboto = Roboto({
+  weight: ['400', '700'],
+  style: ['normal'],
+  subsets: ['latin'],
+})
+
+export default function MyApp({ Component, pageProps }) {
+  return (
+    <main className={roboto.className}>
+      <Component {...pageProps} />
+    </main>
+  )
+}
